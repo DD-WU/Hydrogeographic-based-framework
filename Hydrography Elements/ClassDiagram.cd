@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Region">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAgAgAYIAIEAAIiAABAIAFABIAGIAAAMAEABA=</HashCode>
+      <FileName>Region.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lisflood">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CiIEsMAQACAAAIAIAIIABAIQYQBBQAIEAIgwAAgSEAA=</HashCode>
+      <FileName>lisflood.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

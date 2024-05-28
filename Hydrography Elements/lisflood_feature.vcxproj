@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{b8c106ac-b9aa-423a-a64d-7b66758c2b2d}</ProjectGuid>
+    <RootNamespace>lisfloodfeature</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Hydrography Elements</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>F:\SWMM_lisflood\simulation\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_WINDOWS;_USRDLL;SWMM_LIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>Default</LanguageStandard>
+      <CallingConvention>Cdecl</CallingConvention>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>fvcom.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="BasicExcel.hpp" />
+    <ClInclude Include="BasicFeature.h" />
+    <ClInclude Include="Boundary.h" />
+    <ClInclude Include="buildings.h" />
+    <ClInclude Include="Dam.h" />
+    <ClInclude Include="Lake.h" />
+    <ClInclude Include="pipe_dependency\bmi_swmm.h" />
+    <ClInclude Include="pipe_dependency\consts.h" />
+    <ClInclude Include="pipe_dependency\datetime.h" />
+    <ClInclude Include="pipe_dependency\enums.h" />
+    <ClInclude Include="pipe_dependency\error.h" />
+    <ClInclude Include="pipe_dependency\exfil.h" />
+    <ClInclude Include="pipe_dependency\findroot.h" />
+    <ClInclude Include="pipe_dependency\funcs.h" />
+    <ClInclude Include="pipe_dependency\hash.h" />
+    <ClInclude Include="pipe_dependency\headers.h" />
+    <ClInclude Include="pipe_dependency\infil.h" />
+    <ClInclude Include="pipe_dependency\keywords.h" />
+    <ClInclude Include="pipe_dependency\lid.h" />
+    <ClInclude Include="pipe_dependency\macros.h" />
+    <ClInclude Include="pipe_dependency\mathexpr.h" />
+    <ClInclude Include="pipe_dependency\mempool.h" />
+    <ClInclude Include="pipe_dependency\objects.h" />
+    <ClInclude Include="pipe_dependency\odesolve.h" />
+    <ClInclude Include="pipe_dependency\swmm5.h" />
+    <ClInclude Include="pipe_dependency\text.h" />
+    <ClInclude Include="Pipe_network.h" />
+    <ClInclude Include="River2D.h" />
+    <ClInclude Include="road.h" />
+    <ClInclude Include="tool.h" />
+    <ClInclude Include="land.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="River.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BasicExcel.cpp" />
+    <ClCompile Include="BasicFeature.cpp" />
+    <ClCompile Include="Boundary.cpp" />
+    <ClCompile Include="buildings.cpp" />
+    <ClCompile Include="Dam.cpp" />
+    <ClCompile Include="Lake.cpp" />
+    <ClCompile Include="Land.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="pipe_dependency\climate.c" />
+    <ClCompile Include="pipe_dependency\controls.c" />
+    <ClCompile Include="pipe_dependency\culvert.c" />
+    <ClCompile Include="pipe_dependency\datetime.c" />
+    <ClCompile Include="pipe_dependency\dwflow.c" />
+    <ClCompile Include="pipe_dependency\dynwave.c" />
+    <ClCompile Include="pipe_dependency\error.c" />
+    <ClCompile Include="pipe_dependency\exfil.c" />
+    <ClCompile Include="pipe_dependency\findroot.c" />
+    <ClCompile Include="pipe_dependency\flowrout.c" />
+    <ClCompile Include="pipe_dependency\forcmain.c" />
+    <ClCompile Include="pipe_dependency\gage.c" />
+    <ClCompile Include="pipe_dependency\gwater.c" />
+    <ClCompile Include="pipe_dependency\hash.c" />
+    <ClCompile Include="pipe_dependency\hotstart.c" />
+    <ClCompile Include="pipe_dependency\iface.c" />
+    <ClCompile Include="pipe_dependency\infil.c" />
+    <ClCompile Include="pipe_dependency\inflow.c" />
+    <ClCompile Include="pipe_dependency\input.c" />
+    <ClCompile Include="pipe_dependency\inputrpt.c" />
+    <ClCompile Include="pipe_dependency\keywords.c" />
+    <ClCompile Include="pipe_dependency\kinwave.c" />
+    <ClCompile Include="pipe_dependency\landuse.c" />
+    <ClCompile Include="pipe_dependency\lib_bmi.cpp" />
+    <ClCompile Include="pipe_dependency\lid.c" />
+    <ClCompile Include="pipe_dependency\lidproc.c" />
+    <ClCompile Include="pipe_dependency\link.c" />
+    <ClCompile Include="pipe_dependency\massbal.c" />
+    <ClCompile Include="pipe_dependency\mathexpr.c" />
+    <ClCompile Include="pipe_dependency\mempool.c" />
+    <ClCompile Include="pipe_dependency\node.c" />
+    <ClCompile Include="pipe_dependency\odesolve.c" />
+    <ClCompile Include="pipe_dependency\output.c" />
+    <ClCompile Include="pipe_dependency\project.c" />
+    <ClCompile Include="pipe_dependency\qualrout.c" />
+    <ClCompile Include="pipe_dependency\rain.c" />
+    <ClCompile Include="pipe_dependency\rdii.c" />
+    <ClCompile Include="pipe_dependency\report.c" />
+    <ClCompile Include="pipe_dependency\roadway.c" />
+    <ClCompile Include="pipe_dependency\routing.c" />
+    <ClCompile Include="pipe_dependency\runoff.c" />
+    <ClCompile Include="pipe_dependency\shape.c" />
+    <ClCompile Include="pipe_dependency\snow.c" />
+    <ClCompile Include="pipe_dependency\stats.c" />
+    <ClCompile Include="pipe_dependency\statsrpt.c" />
+    <ClCompile Include="pipe_dependency\subcatch.c" />
+    <ClCompile Include="pipe_dependency\surfqual.c" />
+    <ClCompile Include="pipe_dependency\swmm5.c" />
+    <ClCompile Include="pipe_dependency\table.c" />
+    <ClCompile Include="pipe_dependency\toposort.c" />
+    <ClCompile Include="pipe_dependency\transect.c" />
+    <ClCompile Include="pipe_dependency\treatmnt.c" />
+    <ClCompile Include="pipe_dependency\xsect.c" />
+    <ClCompile Include="Pipe_network.cpp" />
+    <ClCompile Include="River.cpp" />
+    <ClCompile Include="River2D.cpp" />
+    <ClCompile Include="road.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

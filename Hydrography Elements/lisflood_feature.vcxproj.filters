@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="land.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicExcel.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="River.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Boundary.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Pipe_network.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\bmi_swmm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\consts.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\datetime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\enums.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\error.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\exfil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\findroot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\funcs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\hash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\headers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\infil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\keywords.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\macros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\mathexpr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\mempool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\objects.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\odesolve.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\swmm5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\text.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="buildings.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Dam.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="road.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Lake.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="River2D.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_dependency\lid.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicFeature.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Land.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicExcel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="River.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Boundary.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Pipe_network.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\climate.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\controls.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\datetime.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\dwflow.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\dynwave.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\error.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\exfil.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\findroot.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\flowrout.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\forcmain.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\gage.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\hash.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\hotstart.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\iface.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\infil.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\inflow.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\input.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\inputrpt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\keywords.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\kinwave.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\landuse.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\lib_bmi.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\lidproc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\link.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\massbal.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\mathexpr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\mempool.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\node.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\odesolve.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\output.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\project.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\qualrout.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\rain.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\rdii.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\report.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\routing.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\shape.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\snow.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\stats.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\statsrpt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\swmm5.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\table.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\toposort.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\transect.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\treatmnt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\xsect.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="buildings.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Dam.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="road.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Lake.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="River2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\culvert.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\roadway.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\runoff.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\gwater.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\lid.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\subcatch.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_dependency\surfqual.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicFeature.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+</Project>

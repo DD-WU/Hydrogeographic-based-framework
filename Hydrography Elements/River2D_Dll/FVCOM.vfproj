@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioProject ProjectType="typeDynamicLibrary" ProjectCreator="Intel Fortran" Keyword="Dll" Version="11.0" ProjectIdGuid="{0A844910-25C7-463E-85F1-107E66BADAAE}">
+	<Platforms>
+		<Platform Name="Win32"/>
+		<Platform Name="x64"/></Platforms>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory="$(SolutionDir)$(Configuration)\" TargetName="fvcom" ConfigurationType="typeDynamicLibrary">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeCustom" Preprocess="preprocessYes" SourceFileFormat="fileFormatFree" WarnInterfaces="true" Traceback="true" BoundsCheck="true" StackFrameCheck="true" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
+				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" GenerateDebugInformation="true" SubSystem="subSystemWindows" StackReserveSize="1000000000" LinkDLL="true"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Debug|x64" OutputDirectory="$(SolutionDir)$(Configuration)\" ConfigurationType="typeDynamicLibrary">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" Preprocess="preprocessYes" SourceFileFormat="fileFormatFree" WarnInterfaces="true" Traceback="true" BoundsCheck="true" StackFrameCheck="true" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
+				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" GenerateDebugInformation="true" SubSystem="subSystemWindows" LinkDLL="true"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Release|Win32" ConfigurationType="typeDynamicLibrary">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" Preprocess="preprocessYes" SourceFileFormat="fileFormatFree" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFLinkerTool" SuppressStartupBanner="true" SubSystem="subSystemWindows" LinkDLL="true"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Release|x64" ConfigurationType="typeDynamicLibrary">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFLinkerTool" SuppressStartupBanner="true" SubSystem="subSystemWindows" LinkDLL="true"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration></Configurations>
+	<Files>
+		<Filter Name="Header Files" Filter="fi;fd;h;inc"/>
+		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"/>
+		<Filter Name="Source Files" Filter="f90;for;f;fpp;ftn;def;odl;idl">
+		<File RelativePath="..\River2D_Lib\adjust2d3d.f90"/>
+		<File RelativePath="..\River2D_Lib\adjust_ts.F90"/>
+		<File RelativePath="..\River2D_Lib\adv_q.F90"/>
+		<File RelativePath="..\River2D_Lib\adv_s.F90"/>
+		<File RelativePath="..\River2D_Lib\adv_t.F90"/>
+		<File RelativePath="..\River2D_Lib\adv_uv_edge_gcn.F90"/>
+		<File RelativePath="..\River2D_Lib\adv_uv_edge_gcy.F90"/>
+		<File RelativePath="..\River2D_Lib\advave_edge_gcn.F90"/>
+		<File RelativePath="..\River2D_Lib\advave_edge_gcy.F90"/>
+		<File RelativePath="..\River2D_Lib\advection_edge_gcn.F90"/>
+		<File RelativePath="..\River2D_Lib\advection_edge_gcy.F90"/>
+		<File RelativePath="..\River2D_Lib\alloc_vars.F90"/>
+		<File RelativePath="..\River2D_Lib\archive.F"/>
+		<File RelativePath="..\River2D_Lib\arcrst.F90"/>
+		<File RelativePath="..\River2D_Lib\atg.F90"/>
+		<File RelativePath="..\River2D_Lib\aver_s.F"/>
+		<File RelativePath="..\River2D_Lib\aver_t.F"/>
+		<File RelativePath="..\River2D_Lib\baropg.F90"/>
+		<File RelativePath="..\River2D_Lib\bcmap.F90"/>
+		<File RelativePath="..\River2D_Lib\bcond_bfw.F90"/>
+		<File RelativePath="..\River2D_Lib\bcond_gcn.F90"/>
+		<File RelativePath="..\River2D_Lib\bcond_gcy.F90"/>
+		<File RelativePath="..\River2D_Lib\bcond_ts.F90"/>
+		<File RelativePath="..\River2D_Lib\bcs_force.F90"/>
+		<File RelativePath=".\bmi_fvcom.f90"/>
+		<File RelativePath="..\River2D_Lib\bracket.F90"/>
+		<File RelativePath="..\River2D_Lib\brough.F90"/>
+		<File RelativePath="..\River2D_Lib\brough_ud.F90"/>
+		<File RelativePath="..\River2D_Lib\cell_area.F90"/>
+		<File RelativePath="..\River2D_Lib\chazhi.f90"/>
+		<File RelativePath="..\River2D_Lib\closefiles.F90"/>
+		<File RelativePath="..\River2D_Lib\colone.f90"/>
+		<File RelativePath="..\River2D_Lib\conv_over.F90"/>
+		<File RelativePath="..\River2D_Lib\data_run.F90"/>
+		<File RelativePath="..\River2D_Lib\dens.F90"/>
+		<File RelativePath="..\River2D_Lib\dens2.F90"/>
+		<File RelativePath="..\River2D_Lib\dens3.F90"/>
+		<File RelativePath="..\River2D_Lib\depth_check.F90"/>
+		<File RelativePath="..\River2D_Lib\depth_grad.F90"/>
+		<File RelativePath="..\River2D_Lib\domdec.F"/>
+		<File RelativePath="..\River2D_Lib\extel_edge.F90"/>
+		<File RelativePath="..\River2D_Lib\extelpf_edge.F90"/>
+		<File RelativePath="..\River2D_Lib\extuv_edge.F90"/>
+		<File RelativePath="..\River2D_Lib\fct_q2.F90"/>
+		<File RelativePath="..\River2D_Lib\fct_q2l.F90"/>
+		<File RelativePath="..\River2D_Lib\fct_s.F90"/>
+		<File RelativePath="..\River2D_Lib\fct_t.F90"/>
+		<File RelativePath="..\River2D_Lib\genmap.F"/>
+		<File RelativePath="..\River2D_Lib\getdim.F90"/>
+		<File RelativePath="..\River2D_Lib\ghostuv.F90"/>
+		<File RelativePath="..\River2D_Lib\hot_start_data.F90"/>
+		<File RelativePath="..\River2D_Lib\init_sed.F90"/>
+		<File RelativePath="..\River2D_Lib\initial_qql.F90"/>
+		<File RelativePath="..\River2D_Lib\initial_ts.F90"/>
+		<File RelativePath="..\River2D_Lib\initial_uvel.F90"/>
+		<File RelativePath="..\River2D_Lib\iofiles.F90"/>
+		<File RelativePath="..\River2D_Lib\linklist.F"/>
+		<File RelativePath="..\River2D_Lib\mod_atmotide.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_balance_2d.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_clock.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_dye.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_equitide.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_gotm.F"/>
+		<File RelativePath="..\River2D_Lib\mod_inp.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_lag.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_main.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_meanflow.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_ncdave.F"/>
+		<File RelativePath="..\River2D_Lib\mod_ncdio.F"/>
+		<File RelativePath="..\River2D_Lib\mod_newinp.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_northpole.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_obcs.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_obcs2.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_obcs3.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_prec.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_probe.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_scal.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_sed.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_spherical.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_tridiag.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_tsobc.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_types.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_utils.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_wave.f90"/>
+		<File RelativePath="..\River2D_Lib\mod_wd.F90"/>
+		<File RelativePath="..\River2D_Lib\mod_wqm.F90"/>
+		<File RelativePath="..\River2D_Lib\out_avge.F"/>
+		<File RelativePath="..\River2D_Lib\out_binary.F"/>
+		<File RelativePath="..\River2D_Lib\out_sms_one.F"/>
+		<File RelativePath="..\River2D_Lib\particle.F"/>
+		<File RelativePath="..\River2D_Lib\pdomdec.F90"/>
+		<File RelativePath="..\River2D_Lib\phy_baropg.F90"/>
+		<File RelativePath="..\River2D_Lib\print_vals.F"/>
+		<File RelativePath="..\River2D_Lib\report.F90"/>
+		<File RelativePath="..\River2D_Lib\rho_mean.F90"/>
+		<File RelativePath="..\River2D_Lib\sectinf.F90"/>
+		<File RelativePath="..\River2D_Lib\set_bndry.F90"/>
+		<File RelativePath="..\River2D_Lib\set_sigma.F90"/>
+		<File RelativePath="..\River2D_Lib\shape_coef_gcn.F90"/>
+		<File RelativePath="..\River2D_Lib\shape_coef_gcy.F90"/>
+		<File RelativePath="..\River2D_Lib\shutdown_check.F90"/>
+		<File RelativePath="..\River2D_Lib\sinter.F90"/>
+		<File RelativePath="..\River2D_Lib\startup.F90"/>
+		<File RelativePath="..\River2D_Lib\svan.F90"/>
+		<File RelativePath="..\River2D_Lib\tecplot.f90"/>
+		<File RelativePath="..\River2D_Lib\tge.F90"/>
+		<File RelativePath="..\River2D_Lib\theta.F90"/>
+		<File RelativePath="..\River2D_Lib\us_fvcom.f90"/>
+		<File RelativePath="..\River2D_Lib\utilities.F90"/>
+		<File RelativePath="..\River2D_Lib\vdif_q.F90"/>
+		<File RelativePath="..\River2D_Lib\vdif_ts.F90"/>
+		<File RelativePath="..\River2D_Lib\vdif_ts_gom.F90"/>
+		<File RelativePath="..\River2D_Lib\vdif_uv.F90"/>
+		<File RelativePath="..\River2D_Lib\vertvl_edge.F90"/>
+		<File RelativePath="..\River2D_Lib\viscofh.F90"/>
+		<File RelativePath="..\River2D_Lib\viz.F"/>
+		<File RelativePath="..\River2D_Lib\water_depth.F90"/>
+		<File RelativePath="..\River2D_Lib\wreal.F90"/></Filter></Files>
+	<Globals/></VisualStudioProject>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioProject ProjectType="typeStaticLibrary" ProjectCreator="Intel Fortran" Keyword="Static Library" Version="11.0" ProjectIdGuid="{02306673-9A08-48AC-B6EF-75703890A307}">
+	<Platforms>
+		<Platform Name="Win32"/>
+		<Platform Name="x64"/></Platforms>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory="$(SolutionDir)$(Configuration)\" TargetName="fvcom" ConfigurationType="typeStaticLibrary">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" Preprocess="preprocessYes" SourceFileFormat="fileFormatFree" WarnInterfaces="true" Traceback="true" BoundsCheck="true" StackFrameCheck="true" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
+				<Tool Name="VFLibrarianTool"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/></Configuration>
+		<Configuration Name="Debug|x64" ConfigurationType="typeStaticLibrary">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" WarnInterfaces="true" Traceback="true" BoundsCheck="true" StackFrameCheck="true" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
+				<Tool Name="VFLibrarianTool"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/></Configuration>
+		<Configuration Name="Release|Win32" ConfigurationType="typeStaticLibrary">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFLibrarianTool"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/></Configuration>
+		<Configuration Name="Release|x64" ConfigurationType="typeStaticLibrary">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFLibrarianTool"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/></Configuration></Configurations>
+	<Files>
+		<Filter Name="Header Files" Filter="fi;fd"/>
+		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"/>
+		<Filter Name="Source Files" Filter="f90;for;f;fpp;ftn;def;odl;idl">
+		<File RelativePath=".\adjust2d3d.f90"/>
+		<File RelativePath=".\adjust_ts.F90"/>
+		<File RelativePath=".\adv_q.F90"/>
+		<File RelativePath=".\adv_s.F90"/>
+		<File RelativePath=".\adv_t.F90"/>
+		<File RelativePath=".\adv_uv_edge_gcn.F90"/>
+		<File RelativePath=".\adv_uv_edge_gcy.F90"/>
+		<File RelativePath=".\advave_edge_gcn.F90"/>
+		<File RelativePath=".\advave_edge_gcy.F90"/>
+		<File RelativePath=".\advection_edge_gcn.F90"/>
+		<File RelativePath=".\advection_edge_gcy.F90"/>
+		<File RelativePath=".\alloc_vars.F90"/>
+		<File RelativePath=".\archive.F"/>
+		<File RelativePath=".\arcrst.F90"/>
+		<File RelativePath=".\atg.F90"/>
+		<File RelativePath=".\aver_s.F"/>
+		<File RelativePath=".\aver_t.F"/>
+		<File RelativePath=".\baropg.F90"/>
+		<File RelativePath=".\bcmap.F90"/>
+		<File RelativePath=".\bcond_bfw.F90"/>
+		<File RelativePath=".\bcond_gcn.F90"/>
+		<File RelativePath=".\bcond_gcy.F90"/>
+		<File RelativePath=".\bcond_ts.F90"/>
+		<File RelativePath=".\bcs_force.F90"/>
+		<File RelativePath=".\bracket.F90"/>
+		<File RelativePath=".\brough.F90"/>
+		<File RelativePath=".\brough_ud.F90"/>
+		<File RelativePath=".\cell_area.F90"/>
+		<File RelativePath=".\chazhi.f90"/>
+		<File RelativePath=".\closefiles.F90"/>
+		<File RelativePath=".\colone.f90"/>
+		<File RelativePath=".\conv_over.F90"/>
+		<File RelativePath=".\data_run.F90"/>
+		<File RelativePath=".\dens.F90"/>
+		<File RelativePath=".\dens2.F90"/>
+		<File RelativePath=".\dens3.F90"/>
+		<File RelativePath=".\depth_check.F90"/>
+		<File RelativePath=".\depth_grad.F90"/>
+		<File RelativePath=".\domdec.F"/>
+		<File RelativePath=".\extel_edge.F90"/>
+		<File RelativePath=".\extelpf_edge.F90"/>
+		<File RelativePath=".\extuv_edge.F90"/>
+		<File RelativePath=".\fct_q2.F90"/>
+		<File RelativePath=".\fct_q2l.F90"/>
+		<File RelativePath=".\fct_s.F90"/>
+		<File RelativePath=".\fct_t.F90"/>
+		<File RelativePath=".\genmap.F"/>
+		<File RelativePath=".\getdim.F90"/>
+		<File RelativePath=".\ghostuv.F90"/>
+		<File RelativePath=".\hot_start_data.F90"/>
+		<File RelativePath=".\init_sed.F90"/>
+		<File RelativePath=".\initial_qql.F90"/>
+		<File RelativePath=".\initial_ts.F90"/>
+		<File RelativePath=".\initial_uvel.F90"/>
+		<File RelativePath=".\iofiles.F90"/>
+		<File RelativePath=".\linklist.F"/>
+		<File RelativePath=".\mod_atmotide.F90"/>
+		<File RelativePath=".\mod_balance_2d.F90"/>
+		<File RelativePath=".\mod_clock.F90"/>
+		<File RelativePath=".\mod_dye.F90"/>
+		<File RelativePath=".\mod_equitide.F90"/>
+		<File RelativePath=".\mod_gotm.F"/>
+		<File RelativePath=".\mod_inp.F90"/>
+		<File RelativePath=".\mod_lag.F90"/>
+		<File RelativePath=".\mod_main.F90"/>
+		<File RelativePath=".\mod_meanflow.F90"/>
+		<File RelativePath=".\mod_ncdave.F"/>
+		<File RelativePath=".\mod_ncdio.F"/>
+		<File RelativePath=".\mod_newinp.F90"/>
+		<File RelativePath=".\mod_northpole.F90"/>
+		<File RelativePath=".\mod_obcs.F90"/>
+		<File RelativePath=".\mod_obcs2.F90"/>
+		<File RelativePath=".\mod_obcs3.F90"/>
+		<File RelativePath=".\mod_prec.F90"/>
+		<File RelativePath=".\mod_probe.F90"/>
+		<File RelativePath=".\mod_scal.F90"/>
+		<File RelativePath=".\mod_sed.F90"/>
+		<File RelativePath=".\mod_spherical.F90"/>
+		<File RelativePath=".\mod_tridiag.F90"/>
+		<File RelativePath=".\mod_tsobc.F90"/>
+		<File RelativePath=".\mod_types.F90"/>
+		<File RelativePath=".\mod_utils.F90"/>
+		<File RelativePath=".\mod_wave.f90"/>
+		<File RelativePath=".\mod_wd.F90"/>
+		<File RelativePath=".\mod_wqm.F90"/>
+		<File RelativePath=".\out_avge.F"/>
+		<File RelativePath=".\out_binary.F"/>
+		<File RelativePath=".\out_sms_one.F"/>
+		<File RelativePath=".\particle.F"/>
+		<File RelativePath=".\pdomdec.F90"/>
+		<File RelativePath=".\phy_baropg.F90"/>
+		<File RelativePath=".\print_vals.F"/>
+		<File RelativePath=".\report.F90"/>
+		<File RelativePath=".\rho_mean.F90"/>
+		<File RelativePath=".\sectinf.F90"/>
+		<File RelativePath=".\set_bndry.F90"/>
+		<File RelativePath=".\set_sigma.F90"/>
+		<File RelativePath=".\shape_coef_gcn.F90"/>
+		<File RelativePath=".\shape_coef_gcy.F90"/>
+		<File RelativePath=".\shutdown_check.F90"/>
+		<File RelativePath=".\sinter.F90"/>
+		<File RelativePath=".\startup.F90"/>
+		<File RelativePath=".\svan.F90"/>
+		<File RelativePath=".\tecplot.f90"/>
+		<File RelativePath=".\tge.F90"/>
+		<File RelativePath=".\theta.F90"/>
+		<File RelativePath=".\us_fvcom.f90"/>
+		<File RelativePath=".\utilities.F90"/>
+		<File RelativePath=".\vdif_q.F90"/>
+		<File RelativePath=".\vdif_ts.F90"/>
+		<File RelativePath=".\vdif_ts_gom.F90"/>
+		<File RelativePath=".\vdif_uv.F90"/>
+		<File RelativePath=".\vertvl_edge.F90"/>
+		<File RelativePath=".\viscofh.F90"/>
+		<File RelativePath=".\viz.F"/>
+		<File RelativePath=".\water_depth.F90"/>
+		<File RelativePath=".\wreal.F90"/></Filter></Files>
+	<Globals/></VisualStudioProject>
