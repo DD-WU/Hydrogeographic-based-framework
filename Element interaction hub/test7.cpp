@@ -58,13 +58,7 @@ void test7::beforeUpdate()
 			elevation = land->get_elevation(it->first.i, it->first.j);
 			river->get_water_depth(&t, it->second);
 			river->get_depth(&t1, it->second);
-			//if (elevation > 0) {//这个地方主要是河流的数据处理有点问题，不知道为啥，arcgis会把一部分地表认为是河道,这个应该是预处理部分的任务，交给范洪敏做吧，等他添了相关数据处理脚本这里if就可以删了
-			//	printf("");
-			//}
-			//else
-			//{
-				land->set_waterdepth(it->first.i, it->first.j, t1);
-			//}
+			land->set_waterdepth(it->first.i, it->first.j, t1);
 		}
 		cout << ft << endl;
 	}
@@ -96,13 +90,8 @@ void test7::update()//这里举了个不同时间步长的例子
 				elevation= land->get_elevation(it->first.i, it->first.j);
 				river->get_water_depth(&t, it->second);
 				river->get_depth(&t1, it->second);
-				//if (elevation > 0) {//这个地方主要是河流的数据处理有点问题，不知道为啥，arcgis会把一部分地表认为是河道,这个应该是预处理部分的任务，交给范洪敏做吧，等他添了相关数据处理脚本这里if就可以删了
-				//	printf("");
-				//}
-				//else
-				//{
-					land->set_waterdepth(it->first.i, it->first.j, t1);
-				//}
+				land->set_waterdepth(it->first.i, it->first.j, t1);
+
 			}
 		}
 		config->update_time();
@@ -123,13 +112,7 @@ void test7::update()//这里举了个不同时间步长的例子
 				float t, t1;
 				river->get_water_depth(&t, it->second);
 				river->get_depth(&t1, it->second);
-				//if (it->first.i==309&& it->first.j== 981) {
-				//	land->set_waterdepth(it->first.i, it->first.j, t1);
-				//}
-				//else
-				//{
-					land->set_waterdepth(it->first.i, it->first.j, t1);
-				//}
+				land->set_waterdepth(it->first.i, it->first.j, t1);
 			}
 		}
 		config->update_time();
