@@ -216,17 +216,18 @@ void Buildings::BuildingsQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, A
     double h0, h1, ThreadTS, TmpTstep;
     double* hptr0, * hptr1, * qptr, * TSptr;
     int* wiptr;
-
+    int* rptr0, * rptr1;
     //Calculate maximum water depth and time step for acceleration version
     TmpTstep = Solverptr->Tstep;
 
     // Calculate Qx
-#pragma omp parallel for private( i, h0, h1, hptr0,qptr,wiptr,TSptr,ThreadTS) 
+#pragma omp parallel for private( i, h0, h1, hptr0,qptr,rptr0,rptr1,TSptr,ThreadTS) 
     for (j = 0; j < Parptr->ysz; j++)
     {
         hptr0 = Arrptr->H + j * Parptr->xsz;
         qptr = Arrptr->Qx + j * (Parptr->xsz + 1) + 1;
-        wiptr = Arrptr->Weir_Identx + j * (Parptr->xsz + 1) + 1;
+        rptr0 = Arrptr->RiverFlag + j * Parptr->xsz;
+        rptr1 = Arrptr->RiverFlag + j * Parptr->xsz + 1;
         // initialise thread time step for openMP
         ThreadTS = TmpTstep;
         TSptr = &ThreadTS;
@@ -235,36 +236,43 @@ void Buildings::BuildingsQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, A
             h0 = *hptr0;
             h1 = *(hptr0 + 1);
             *qptr = 0.0;
+            if (h0 > Solverptr->DepthThresh || h1 > Solverptr->DepthThresh) {
+                if (Statesptr->river2d_couple == 1) {
+                    *qptr = CalcARFQx(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+                    if ((*rptr0 == 1 && *rptr1 == 1)) {//|| ((*rptr0 == 0 && *rptr1 == 1)&& *qptr>0)|| ((*rptr0 == 1 && *rptr1 == 0) && *qptr < 0)
+                        *qptr = 0;
+                    }
+                    else
+                    {
 
-            if (h0 > Solverptr->DepthThresh || h1 > Solverptr->DepthThresh)
-            {
-                *qptr = CalcARFQx(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+                    }
+                }
+                else
+                {
+                    *qptr = CalcARFQx(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+                }
             }
             qptr++;
             hptr0++;
-            wiptr++;
+            rptr0++;
+            rptr1++;
         }
-        if (Statesptr->acceleration == ON || Statesptr->Roe == ON)
-        {
-            // do nothing
-        }
-        else
-        {
 #pragma omp critical
-            {
-                Solverptr->Tstep = Tool::getmin(Solverptr->Tstep, ThreadTS);
-            }
+        {
+            Solverptr->Tstep = Tool::getmin(Solverptr->Tstep, ThreadTS);
         }
+
     }
     // Calculate Qy
-//#pragma omp section
-#pragma omp parallel for private( i, h0, h1, hptr0,hptr1,qptr,wiptr,TSptr,ThreadTS)
+  //#pragma omp section
+#pragma omp parallel for private( i, h0, h1, hptr0,hptr1,qptr,rptr0,rptr1,TSptr,ThreadTS)
     for (j = 0; j < Parptr->ysz - 1; j++)
     {
         hptr0 = Arrptr->H + j * Parptr->xsz;
         hptr1 = Arrptr->H + (j + 1) * Parptr->xsz;
         qptr = Arrptr->Qy + (j + 1) * (Parptr->xsz + 1);
-        wiptr = Arrptr->Weir_Identy + (j + 1) * (Parptr->xsz + 1);
+        rptr0 = Arrptr->RiverFlag + j * Parptr->xsz;
+        rptr1 = Arrptr->RiverFlag + (j + 1) * Parptr->xsz;
         // initialise thread time step for openMP
         ThreadTS = TmpTstep;
         TSptr = &ThreadTS;
@@ -273,22 +281,34 @@ void Buildings::BuildingsQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, A
             h0 = *hptr0;
             h1 = *hptr1;
             *qptr = 0.0;
-
             if (h0 > Solverptr->DepthThresh || h1 > Solverptr->DepthThresh)
             {
-                *qptr = CalcARFQy(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+                if (Statesptr->river2d_couple == 1) {
+                    *qptr = CalcARFQy(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+                    if ((*rptr0 == 1 && *rptr1 == 1)) {// || ((*rptr0 == 0 && *rptr1 == 1) && *qptr > 0) || ((*rptr0 == 1 && *rptr1 == 0) && *qptr < 0)
+                        *qptr = 0;
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    *qptr = CalcARFQy(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+                }
             }
             hptr0++;
             hptr1++;
             qptr++;
-            wiptr++;
+            rptr0++;
+            rptr1++;
         }
 
 #pragma omp critical
-            {
-                Solverptr->Tstep =Tool:: getmin(Solverptr->Tstep, ThreadTS);
-            }
-        
+        {
+            Solverptr->Tstep = Tool::getmin(Solverptr->Tstep, ThreadTS);
+        }
     }
     return;
 //    int i, j;
