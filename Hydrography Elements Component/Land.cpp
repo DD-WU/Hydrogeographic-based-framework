@@ -70,7 +70,7 @@ void Region::init()
 void Region::update()
 {
     if (parameter->Solverptr->t > 0.0) parameter->Solverptr->Tstep = parameter->Solverptr->InitTstep;
-    if (parameter->Statesptr->BuildingFlag==0)FloodplainQ(parameter->Statesptr, parameter->Parptr, parameter->Solverptr, parameter->Arrptr);//这个地方不太好，应该加个建筑物flag栅格，然后内部判断是建筑物还是地块,类似于2维河道和地块的判断，但反正直接写buildingQ里效果一样，就先不加了
+    if (parameter->Statesptr->BuildingFlag==0)FloodplainQ(parameter->Statesptr, parameter->Parptr, parameter->Solverptr, parameter->Arrptr);//这个地方不太好，应该加个建筑物flag栅格，然后内部判断是建筑物还是地块,类似于2维河道和地块的判断，
 
 
 }

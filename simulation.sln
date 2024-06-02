@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.33214.272
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simulation", "simulation\simulation.vcxproj", "{DF6E4D00-3FA9-47C4-8CCB-F20219769B55}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hydrography Elements", "Hydrography Elements\lisflood_feature.vcxproj", "{B8C106AC-B9AA-423A-A64D-7B66758C2B2D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hydrography Elements Component", "Hydrography Elements Component\lisflood_feature.vcxproj", "{B8C106AC-B9AA-423A-A64D-7B66758C2B2D}"
 EndProject
-Project("{6989167D-11E4-40FE-8C1A-2192A86A7E90}") = "FVCOM", "Hydrography Elements\River2D_Dll\FVCOM.vfproj", "{0A844910-25C7-463E-85F1-107E66BADAAE}"
+Project("{6989167D-11E4-40FE-8C1A-2192A86A7E90}") = "FVCOM", "Hydrography Elements Component\River2D_Dll\FVCOM.vfproj", "{0A844910-25C7-463E-85F1-107E66BADAAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

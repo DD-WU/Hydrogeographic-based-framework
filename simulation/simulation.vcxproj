@@ -19,27 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Element interaction hub\Feature_Interaction_Hub.cpp" />
-    <ClCompile Include="..\element interaction hub\test1.cpp" />
-    <ClCompile Include="..\element interaction hub\test2.cpp" />
-    <ClCompile Include="..\element interaction hub\test3.cpp" />
-    <ClCompile Include="..\element interaction hub\test4.cpp" />
-    <ClCompile Include="..\element interaction hub\test5.cpp" />
-    <ClCompile Include="..\element interaction hub\test6.cpp" />
-    <ClCompile Include="..\element interaction hub\test7.cpp" />
-    <ClCompile Include="..\element interaction hub\test8.cpp" />
+    <ClCompile Include="..\Hydrography Element interaction hub\Feature_Interaction_Hub.cpp" />
+    <ClCompile Include="..\Hydrography Element interaction hub\test1.cpp" />
+    <ClCompile Include="..\Hydrography Element interaction hub\test2.cpp" />
+    <ClCompile Include="..\Hydrography Element interaction hub\test3.cpp" />
+    <ClCompile Include="..\Hydrography Element interaction hub\test4.cpp" />
+    <ClCompile Include="..\Hydrography Element interaction hub\test5.cpp" />
+    <ClCompile Include="..\Hydrography Element interaction hub\test6.cpp" />
+    <ClCompile Include="..\Hydrography Element interaction hub\test7.cpp" />
+    <ClCompile Include="..\Hydrography Element interaction hub\test8.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Element interaction hub\Feature_Interaction_Hub.h" />
-    <ClInclude Include="..\element interaction hub\test1.h" />
-    <ClInclude Include="..\element interaction hub\test2.h" />
-    <ClInclude Include="..\element interaction hub\test3.h" />
-    <ClInclude Include="..\element interaction hub\test4.h" />
-    <ClInclude Include="..\element interaction hub\test5.h" />
-    <ClInclude Include="..\element interaction hub\test6.h" />
-    <ClInclude Include="..\element interaction hub\test7.h" />
-    <ClInclude Include="..\element interaction hub\test8.h" />
+    <ClInclude Include="..\Hydrography Element interaction hub\Feature_Interaction_Hub.h" />
+    <ClInclude Include="..\Hydrography Element interaction hub\test1.h" />
+    <ClInclude Include="..\Hydrography Element interaction hub\test2.h" />
+    <ClInclude Include="..\Hydrography Element interaction hub\test3.h" />
+    <ClInclude Include="..\Hydrography Element interaction hub\test4.h" />
+    <ClInclude Include="..\Hydrography Element interaction hub\test5.h" />
+    <ClInclude Include="..\Hydrography Element interaction hub\test6.h" />
+    <ClInclude Include="..\Hydrography Element interaction hub\test7.h" />
+    <ClInclude Include="..\Hydrography Element interaction hub\test8.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -149,7 +149,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\SWMM_lisflood\simulation\Element interaction hub;F:\SWMM_lisflood\simulation\Hydrography Elements;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\SWMM_lisflood\simulation\Hydrography Element interaction hub;F:\SWMM_lisflood\simulation\Hydrography Elements Component;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
