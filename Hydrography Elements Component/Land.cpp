@@ -200,7 +200,19 @@ void Region::FloodplainQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, Arr
       h1 = *(hptr0 + 1);
       *qptr = 0.0;
       if (h0 > Solverptr->DepthThresh || h1 > Solverptr->DepthThresh) {
-          *qptr = CalcFPQx(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+          if (Statesptr->buildingcouple == 1)
+          {
+              if ((*bptr0 == 1 && *bptr1 == 1)) {
+                  
+              }
+              else
+              {
+                  *qptr = CalcFPQx(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+              }
+          }
+          if (*qptr == 0) {//看似啰嗦，这是为了要素组件交换位置结果不变，从而提供更强的灵活性
+              *qptr = CalcFPQx(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+          }
           if(Statesptr->river2d_couple==1){
               if((*rptr0 == 1 && *rptr1 == 1)) {
                   *qptr = 0;
@@ -208,16 +220,6 @@ void Region::FloodplainQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, Arr
               else
               {
                   
-              }
-          }
-          if(Statesptr->buildingcouple == 1)
-          {
-              if ((*bptr0 == 1 && *bptr1 == 1)) {//|| ((*rptr0 == 0 && *rptr1 == 1)&& *qptr>0)|| ((*rptr0 == 1 && *rptr1 == 0) && *qptr < 0) 建筑物也就加个bptr类似这样写，注释里的这段话意思是如果（（当前点是地块&&右边是河流）&&自地块流向河流||（当前点是河流&&右边是地块）&&自地块流向河流）），哪位好心人想写下建筑物与地块耦合逻辑也可以在这里写，下面y轴类似的
-                  *qptr = 0;
-              }
-              else
-              {
-
               }
           }
       }
@@ -256,19 +258,21 @@ void Region::FloodplainQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, Arr
       *qptr = 0.0;
       if (h0 > Solverptr->DepthThresh || h1 > Solverptr->DepthThresh)
       {
-          *qptr = CalcFPQy(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
-          if (Statesptr->river2d_couple == 1) {
-              if ((*rptr0 == 1 && *rptr1 == 1)) {//|| ((*rptr0 == 0 && *rptr1 == 1)&& *qptr>0)|| ((*rptr0 == 1 && *rptr1 == 0) && *qptr < 0) 建筑物也就加个bptr类似这样写，注释里的这段话意思是如果（（当前点是地块&&右边是河流）&&自地块流向河流||（当前点是河流&&右边是地块）&&自地块流向河流）），哪位好心人想写下建筑物与地块耦合逻辑也可以在这里写，下面y轴类似的
-                  *qptr = 0;
-              }
-              else
-              {
-
-              }
-          }
           if (Statesptr->buildingcouple == 1)
           {
-              if ((*bptr0 == 1 && *bptr1 == 1)) {//|| ((*rptr0 == 0 && *rptr1 == 1)&& *qptr>0)|| ((*rptr0 == 1 && *rptr1 == 0) && *qptr < 0) 建筑物也就加个bptr类似这样写，注释里的这段话意思是如果（（当前点是地块&&右边是河流）&&自地块流向河流||（当前点是河流&&右边是地块）&&自地块流向河流）），哪位好心人想写下建筑物与地块耦合逻辑也可以在这里写，下面y轴类似的
+              if ((*bptr0 == 1 && *bptr1 == 1)) {
+                  
+              }
+              else
+              {
+                  *qptr = CalcFPQy(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+              }
+          }
+          if (*qptr == 0) {
+              *qptr = CalcFPQy(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+          }
+          if (Statesptr->river2d_couple == 1) {
+              if ((*rptr0 == 1 && *rptr1 == 1)) {
                   *qptr = 0;
               }
               else
@@ -276,6 +280,7 @@ void Region::FloodplainQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, Arr
 
               }
           }
+
       }
       hptr0++;
       hptr1++;
