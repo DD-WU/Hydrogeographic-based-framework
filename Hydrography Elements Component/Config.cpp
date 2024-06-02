@@ -213,6 +213,10 @@ void Config::readParamFile_lisflood(const char* config_file, const char* sheet)
                         Statesptr->buildingHeight = 1;
                         strcpy(Fnameptr->BuildingheightName, excel->sheet->Cell(r, c + 1)->GetString());
                     }
+                    if (temp == "Building_Flag") {
+                        Statesptr->buildingcouple = 1;
+                        strcpy(Fnameptr->BuildingFlag, excel->sheet->Cell(r, c + 1)->GetString());
+                    }
                     if (temp == "manningfile") strcpy(Fnameptr->nfilename, excel->sheet->Cell(r, c + 1)->GetString());
                     if (temp == "ARF") Solverptr->ARF = excel->sheet->Cell(r, c + 1)->GetDouble();
                     if (temp == "qoutput") Statesptr->save_Qs = ON;
@@ -1771,8 +1775,15 @@ void Config::UpdateH(States* Statesptr, Pars* Parptr, Solver* Solverptr, BoundCs
                 {
                     dV = Solverptr->Tstep * (*qxptr0 - *(qxptr0 + 1) + *qyptr0 - *qyptr1);
                     double temp = dV / Parptr->dA;
-                    if (*rptr0 ==1) {
-                        printf("");
+                    if (Statesptr->river2d_couple == 1)
+                    {
+                        if (*rptr0 == 1) {
+                            printf("");
+                        }
+                        else
+                        {
+                            (*hptr) += temp;
+                        }
                     }
                     else
                     {

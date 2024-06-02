@@ -70,7 +70,7 @@ void Region::init()
 void Region::update()
 {
     if (parameter->Solverptr->t > 0.0) parameter->Solverptr->Tstep = parameter->Solverptr->InitTstep;
-    if (parameter->Statesptr->BuildingFlag==0)FloodplainQ(parameter->Statesptr, parameter->Parptr, parameter->Solverptr, parameter->Arrptr);//这个地方不太好，应该加个建筑物flag栅格，然后内部判断是建筑物还是地块,类似于2维河道和地块的判断，
+    FloodplainQ(parameter->Statesptr, parameter->Parptr, parameter->Solverptr, parameter->Arrptr);
 
 
 }
@@ -178,17 +178,19 @@ void Region::FloodplainQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, Arr
   int i, j;
   double h0, h1, ThreadTS, TmpTstep;
   double* hptr0, * hptr1, * qptr, * TSptr;
-  int* rptr0, *rptr1;
+  int* rptr0, *rptr1,* bptr0, * bptr1;
   TmpTstep = Solverptr->Tstep;
 
   // Calculate Qx
-#pragma omp parallel for private( i, h0, h1, hptr0,qptr,rptr0,rptr1,TSptr,ThreadTS) 
+#pragma omp parallel for private( i, h0, h1, hptr0,qptr,rptr0,rptr1,bptr0,bptr1,TSptr,ThreadTS) 
   for (j = 0; j < Parptr->ysz; j++)
   {
     hptr0 = Arrptr->H + j * Parptr->xsz;
     qptr = Arrptr->Qx + j * (Parptr->xsz + 1) + 1;
     rptr0 = Arrptr->RiverFlag + j * Parptr->xsz;
     rptr1 = Arrptr->RiverFlag + j * Parptr->xsz+1;
+    bptr0 = Arrptr->BulidingFlag + j * Parptr->xsz;
+    bptr1 = Arrptr->BulidingFlag + j * Parptr->xsz + 1;
     // initialise thread time step for openMP
     ThreadTS = TmpTstep;
     TSptr = &ThreadTS;
@@ -198,9 +200,9 @@ void Region::FloodplainQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, Arr
       h1 = *(hptr0 + 1);
       *qptr = 0.0;
       if (h0 > Solverptr->DepthThresh || h1 > Solverptr->DepthThresh) {
+          *qptr = CalcFPQx(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
           if(Statesptr->river2d_couple==1){
-              *qptr = CalcFPQx(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
-              if((*rptr0 == 1 && *rptr1 == 1)) {//|| ((*rptr0 == 0 && *rptr1 == 1)&& *qptr>0)|| ((*rptr0 == 1 && *rptr1 == 0) && *qptr < 0) 建筑物也就加个bptr类似这样写，注释里的这段话意思是如果（（当前点是地块&&右边是河流）&&自地块流向河流||（当前点是河流&&右边是地块）&&自地块流向河流）），哪位好心人想写下建筑物与地块耦合逻辑也可以在这里写，下面y轴类似的
+              if((*rptr0 == 1 && *rptr1 == 1)) {
                   *qptr = 0;
               }
               else
@@ -208,15 +210,23 @@ void Region::FloodplainQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, Arr
                   
               }
           }
-          else
+          if(Statesptr->buildingcouple == 1)
           {
-              *qptr = CalcFPQx(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+              if ((*bptr0 == 1 && *bptr1 == 1)) {//|| ((*rptr0 == 0 && *rptr1 == 1)&& *qptr>0)|| ((*rptr0 == 1 && *rptr1 == 0) && *qptr < 0) 建筑物也就加个bptr类似这样写，注释里的这段话意思是如果（（当前点是地块&&右边是河流）&&自地块流向河流||（当前点是河流&&右边是地块）&&自地块流向河流）），哪位好心人想写下建筑物与地块耦合逻辑也可以在这里写，下面y轴类似的
+                  *qptr = 0;
+              }
+              else
+              {
+
+              }
           }
       }
       qptr++;
       hptr0++;
       rptr0++;
       rptr1++;
+      bptr0++;
+      bptr1++;
     }
 #pragma omp critical
       {
@@ -234,6 +244,8 @@ void Region::FloodplainQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, Arr
     qptr = Arrptr->Qy + (j + 1) * (Parptr->xsz + 1);
     rptr0 = Arrptr->RiverFlag + j * Parptr->xsz;
     rptr1 = Arrptr->RiverFlag + (j + 1) * Parptr->xsz;
+    bptr0 = Arrptr->BulidingFlag + j * Parptr->xsz;
+    bptr1 = Arrptr->BulidingFlag + (j + 1) * Parptr->xsz;
     // initialise thread time step for openMP
     ThreadTS = TmpTstep;
     TSptr = &ThreadTS;
@@ -244,19 +256,25 @@ void Region::FloodplainQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, Arr
       *qptr = 0.0;
       if (h0 > Solverptr->DepthThresh || h1 > Solverptr->DepthThresh)
       {
+          *qptr = CalcFPQy(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
           if (Statesptr->river2d_couple == 1) {
-              *qptr = CalcFPQy(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
-              if ((*rptr0 == 1 && *rptr1 == 1)) {// || ((*rptr0 == 0 && *rptr1 == 1) && *qptr > 0) || ((*rptr0 == 1 && *rptr1 == 0) && *qptr < 0)
+              if ((*rptr0 == 1 && *rptr1 == 1)) {//|| ((*rptr0 == 0 && *rptr1 == 1)&& *qptr>0)|| ((*rptr0 == 1 && *rptr1 == 0) && *qptr < 0) 建筑物也就加个bptr类似这样写，注释里的这段话意思是如果（（当前点是地块&&右边是河流）&&自地块流向河流||（当前点是河流&&右边是地块）&&自地块流向河流）），哪位好心人想写下建筑物与地块耦合逻辑也可以在这里写，下面y轴类似的
                   *qptr = 0;
               }
               else
               {
-                  
+
               }
           }
-          else
+          if (Statesptr->buildingcouple == 1)
           {
-              *qptr = CalcFPQy(i, j, Statesptr, Parptr, Solverptr, Arrptr, TSptr);
+              if ((*bptr0 == 1 && *bptr1 == 1)) {//|| ((*rptr0 == 0 && *rptr1 == 1)&& *qptr>0)|| ((*rptr0 == 1 && *rptr1 == 0) && *qptr < 0) 建筑物也就加个bptr类似这样写，注释里的这段话意思是如果（（当前点是地块&&右边是河流）&&自地块流向河流||（当前点是河流&&右边是地块）&&自地块流向河流）），哪位好心人想写下建筑物与地块耦合逻辑也可以在这里写，下面y轴类似的
+                  *qptr = 0;
+              }
+              else
+              {
+
+              }
           }
       }
       hptr0++;
@@ -264,6 +282,8 @@ void Region::FloodplainQ(States* Statesptr, Pars* Parptr, Solver* Solverptr, Arr
       qptr++;
       rptr0++;
       rptr1++;
+      bptr0++;
+      bptr1++;
     }
 
 #pragma omp critical

@@ -29,6 +29,7 @@ void Buildings::init()
         cout << "	" << endl;
         LoadRoofManningsn(paramater->Fnameptr, paramater->Parptr, paramater->Arrptr, paramater->verbose);
     }
+    LoadBuildingFlag(paramater->Fnameptr, paramater->Statesptr, paramater->Parptr, paramater->Arrptr, paramater->verbose);
 }
 
 void Buildings::update()
@@ -40,7 +41,26 @@ void Buildings::update()
 void Buildings::finalize()
 {
 }
+void  Buildings::LoadBuildingFlag(Fnames* Fnameptr, States* Statesptr, Pars* Parptr, Arrays* Arrptr, int* verbose) {
+    FILE* fp;
+    char dum[800];
+    double no_data_value = -9999;
+    int i, j;
+    fp = fopen(Fnameptr->BuildingFlag, "rb");
+    if (fp == NULL) { fprintf(stderr, "No BuildingFlag file found. Aborting.\n"); exit(0); }
+    Arrptr->BulidingFlag = new int[Parptr->xsz * Parptr->ysz]();
+    for (i = 0; i < 5; i++) fscanf(fp, "%s %s", dum, dum);
+    fscanf(fp, "%s %lf", dum, &no_data_value);
+    for (j = 0; j < Parptr->ysz; j++) for (i = 0; i < Parptr->xsz; i++)
+    {
+        fscanf(fp, "%d", Arrptr->BulidingFlag + i + j * Parptr->xsz);
+        // if no_data set depth to zero
+        if ((int)Arrptr->BulidingFlag[i + j * Parptr->xsz] == no_data_value) Arrptr->BulidingFlag[i + j * Parptr->xsz] = 0;
+    }
+    fclose(fp);
 
+    if (*verbose == ON) printf("Done.\n\n");
+}
 void  Buildings::LoadDSM(Fnames* Fnameptr, States* Statesptr, Pars* Parptr, Arrays* Arrptr, int* verbose)
 {
     FILE* fp;

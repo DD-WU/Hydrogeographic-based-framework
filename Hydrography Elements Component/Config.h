@@ -35,6 +35,7 @@ struct Arrays {
 	double* DEM; // Digital elevation model
 	double* DSM; // 当ARF模式时，我们用到dsm和dem两个东西
 	int* RiverFlag;
+	int* BulidingFlag;
 	double* ARF;// Digital elevation model
 	double* H,*temp_H, * Qx, * Qy, * Qxold, * Qyold, * U, * V, * Hflowx, * Hflowy;
 	/* TRENT additions  */
@@ -75,6 +76,7 @@ struct Fnames {
 	char DSMname[80];
 	char BuildingStartWaterName[80];
 	char BuildingManningn[80];
+	char BuildingFlag[80];
 	char BuildingheightName[80];
 //building file name
 //Lake file name
@@ -167,6 +169,7 @@ struct SGCprams {
 struct States {
 	int ChannelPresent;
 	int river2d_couple;
+	int buildingcouple;
 	int river_couple;
 	int land_couple;
 	int buildingHeight;

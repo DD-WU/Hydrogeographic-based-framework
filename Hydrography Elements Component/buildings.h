@@ -9,7 +9,9 @@ public:
 	Water_API void init()override;
 	Water_API void update()override;
 	Water_API void finalize()override;
+
 	//inner functions
+	Water_API void LoadBuildingFlag(Fnames* Fnameptr, States* Statesptr, Pars* Parptr, Arrays* Arrptr, int* verbose);
 	Water_API void LoadDSM(Fnames*, States*, Pars*, Arrays*, int*);
 	Water_API void LoadBuildingHeight(Fnames*, States*, Pars*, Arrays*, int*);
 	Water_API void LoadARF(Fnames*, States*, Pars*, Arrays*, int*);
